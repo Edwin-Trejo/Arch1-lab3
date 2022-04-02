@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-extern int tracer();    //extern method
+extern int tracer();    //extern method     Christian Gomez helped me implementing the tracer method
 
 int trycell(int *x, int pos)
 {
