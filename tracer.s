@@ -1,4 +1,4 @@
-.global tracer
+.global tracer  ;tracer method
 
 tracer:
         mv a0,sp
