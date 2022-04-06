@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-extern int tracer();    //extern method
+extern int tracer();    //extern method     Christian Gomez helped me implementing the tracer method
 
 int trycell(int *x, int pos)
 {
@@ -11,7 +11,7 @@ int trycell(int *x, int pos)
     if (pos == 81) return 1;
     if (x[pos]) return trycell(x, pos + 1);
     int t1 = tracer();      //creates t1 and defines it using an extern method
-    printf("Entering position:%p\n",$t1);   //prints current position of tracer t1
+    printf("Entering position:%p\n",&t1);   //prints current position of tracer t1
     
     for (i = 0; i < 9; i++)
         used |= 1 << (x[i * 9 + col] - 1);
@@ -29,7 +29,7 @@ int trycell(int *x, int pos)
         if (!(used & 1) && trycell(x, pos + 1)) return 1;
 
     int t2 = tracer();      //creates t2 and defines it using an extern method
-    printf("Leaving position:%p\n",$t2);   //prints current position of tracer t2
+    printf("Leaving position:%p\n",&t2);   //prints current position of tracer t2
     
     x[pos] = 0;
     return 0;
